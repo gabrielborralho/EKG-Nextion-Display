@@ -6,7 +6,9 @@ See the sketch for more instructions.
 
 ## This project uses:
 > AD8232 Module;
+
 > Nextion Display;
+
 > And the Arduino NANO.
 
 # Diagram
@@ -21,14 +23,18 @@ The design of this project can be accessed at `EKG-Nextion-Display/Project-of-Ne
 # Processing IDE
 The EKG reading can also be viewed on the computer through the Processing IDE software, which can be downloaded at:
 https://processing.org/download/
+
 The code for processing implemented in this project can be accessed in `EKG-Nextion-Display/EKG_PROCESSING/ECG_PROCESSING.pde`.
 This is the result of a reading:
+
 <img src="https://i.imgur.com/t0kk6GW.png"/>
 
 # Nextion Display
 This is the Nextion Display 3.2 - NX4024T032_011R
+
 <img src="https://i.imgur.com/7LMOoFN.jpg"/>
 
 # AD8232 Shield
 This is the AD8232 shield.
+
 <img src="http://www.botnroll.com/3302-thickbox_default/monitor-de-batimentos-cardiacos-de-cabo-unico-ad8232.jpg"/>
