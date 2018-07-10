@@ -4,6 +4,9 @@ This repository contains the code and instructions to make a Arduino EKG with AD
 Instructions are written as comments in the code.
 See the sketch for more instructions.
 
+## Video:
+https://youtu.be/IBw0s4CYkAM
+
 ## This project uses:
 > AD8232 Module;
 
