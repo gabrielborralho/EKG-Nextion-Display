@@ -1,26 +1,35 @@
-/******************************************************************************
+/** ##############################################################
+**
+**  Filename  : EKG-Nextion-Display.ino
+**  Project   : EKG-Nextion-Display
+**  Processor : ATMega328/P
+**  Version   : 1.0
+**  Compiler  : Arduino IDE
+**  Date/Time : 22/09/2017
+**  Aluno     : Gabriel Borralho
+**  Last Mod  : 27/09/2017
+**
+** ##############################################################*/
+
+/*****************************************************************
 Hardware:
 
-  # AD8232 Heart Monitor Version: 1.0 -> Hardware Platform: Arduino Pro 3.3V/8MHz
+  # AD8232
       >OUT - pin A0
       >LO- - pin 5
       >LO+ - pin 6
       
-  # SD Card:
-      > CS   - pin 10 
-      > MOSI - pin 11
-      > MISO - pin 12
-      > CLK  - pin 13
-      
+  #Nextion Display 3.2 - NX4024T032_011R
+    >TX - pin RX0
+    >RX - pin TX1
+          
   # Buzzer - pin 2  
-
- Autor: Gabriel Borralho  Data: Setembro de 2017
-******************************************************************************/
+******************************************************************/
 #include "Nextion.h"
 
-#define LEVEL_LOW       (0)
-#define CH0_OFFSET  (25) //altura do eixo normal
-#define NOTE  1000
+#define LEVEL_LOW   (0)
+#define CH0_OFFSET  (25) //Normal shaft height
+#define NOTE  1000 //Tint set to buzzer
 
 NexWaveform s0 = NexWaveform(0, 1, "s0");
 NexDSButton bt0   = NexDSButton(0, 7, "bt0"); //Button Pause/Play
@@ -38,15 +47,13 @@ bool BeatComplete = false;
 int BPM = 0;    
 #define UpperThreshold 550
 #define LowerThreshold 490    
-int Signal; // holds the incoming raw data. Signal value can range from 0-1024
+int Signal; // holds the incoming raw data. Signal value can range from 0-1024.
 char buffer[100] = {0};//bpm
 //***********************************************
 
 void setup() {
-  //Serial.begin(9600);  // initialize the serial communication 
   pinMode(speakerPin,OUTPUT);
-  nexInit();
-  //dbSerialPrintln("setup done");
+  nexInit(); //Initializes communication with the Nextion Display.
 }
 
 void loop() {
@@ -82,7 +89,6 @@ void loop() {
       memset(buffer, 0, sizeof(buffer)); //bpm
       itoa(BPM, buffer, 10); //bpm
       c=0;
-    } 
-  
+    }   
 }
 
